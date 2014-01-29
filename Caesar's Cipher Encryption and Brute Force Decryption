@@ -1,0 +1,65 @@
+# ==========================================Caesar Cipher encryption and decryption================================ #
+'''The string to be encrypted/decrypted with the encryption/decryption key with the encrypt mode activated and with 
+the variable that will held the new message. Finally, a variable that displays all the possible symbols,so our message 
+can be encrypted.'''
+
+import pyperclip
+continueEncryption=True
+
+def encryption(continuePlaying,message,key):
+    translated = ''
+    LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for symbol in message:             # Run the encryptin code on each symbol in the message string
+        if symbol in LETTERS:
+            num = LETTERS.find(symbol) # get the number of the symbol of the given message corresponding to our alphabet
+            num = num +key             # ENCRYPTION OCCURS HERE! add the numeric value of symbol plus the value of the key.
+            if num >= len(LETTERS):    
+                num = num - len(LETTERS)
+            ''' This part handles the wrap-around only if num is larger than the length of our alphabet (25). If one value             of num is greater than 25 then subtract num minus 25 and we will get the new encrypted value. After this, add             the new encrypted value to the translated variable.For instance, 27-25=2 will be letter C.  '''
+            translated = translated + LETTERS[num]    
+        else:                          # If you don't find the symbol then add the symbol without encrypting
+            translated = translated + symbol                                       
+    print(translated)                  # print the encrypted string to the screen
+    pyperclip.copy(translated)         #copy the encrypted tring to the clipboard
+
+
+def decryption(continuePlaying,message):
+    LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for numOfkey in range(len(LETTERS)):        # Loop through every possible key.
+        translated = ''
+        for symbol in message:             # Run the decryption code on each symbol in the message
+            if symbol in LETTERS:
+                num = LETTERS.find(symbol) # get the number of the symbol
+                num = num - numOfkey    # DECRYPTION OCCURS HERE! subtract the numeric value of symbol minus the key value.
+                if num < 0:
+                    num = num + len(LETTERS) # This part handles the wrap around. 
+                    # add number's symbol at the end of translated
+                translated = translated + LETTERS[num]
+            else:
+                translated = translated + symbol
+                # display the current key being tested, along with its decryption
+        print('Key #%s: %s' % (numOfkey, translated))
+        pyperclip.copy(translated)
+
+#=============================Main Board========================#
+print "Welcome to the encryption and decryption program.\n"
+while (continueEncryption):
+    print "Select the mode:\n"
+    print "1. Encryption\n"
+    print "2. Decryption\n"
+    print "3. Quit\n"
+    mode   = int(raw_input('Please, select an option: '))
+    if mode==3:
+        print "End of the game.\n"
+        continueEncryption=False
+    elif mode==1:
+        message    = raw_input("Please, give a message: ").upper()
+        key        = int (raw_input("Please, a numeric key number: "))
+        encryption(continueEncryption,message,key)
+    elif mode==2:    
+        message    = raw_input("Please, give a message: ").upper()       
+        decryption(continueEncryption,message)
+    else:
+        print "Not a valid option, please type a valid number."
+    
+        
