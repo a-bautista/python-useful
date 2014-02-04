@@ -1,7 +1,7 @@
 # ==========================================Caesar Cipher encryption and decryption================================ #
 '''The string to be encrypted/decrypted with the encryption/decryption key with the encrypt mode activated and with 
 the variable that will held the new message. Finally, a variable that displays all the possible symbols,so our message 
-can be encrypted.'''
+can be encrypted..'''
 
 import pyperclip
 continueEncryption=True
