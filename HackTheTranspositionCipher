@@ -1,0 +1,43 @@
+import math,pyperclip
+
+def main():
+    message        = raw_input("Give me your message: ")
+    keyValue       = int(raw_input("Give a numeric value: "))
+    ciphertext     = encryptMessage(message,keyValue)
+    print(ciphertext + '|')
+    pyperclip.copy(ciphertext)
+    plaintext      = decryptMessage(ciphertext,keyValue)
+    print(plaintext + '|')
+    pyperclip.copy(plaintext)
+
+def encryptMessage(message,keyValue):
+    ciphertext=['']*keyValue    
+    #Ciphertext represents a list with blank spaces that represents the number of columns.The number of columns is equal to the number of the key.
+    for column in range(keyValue):
+        pointer= column   #The pointer starts at the first column.
+        while pointer < len(message):
+            ciphertext[column]+=message[pointer] #Message[pointer] grabs the nth element of the message that is located with its numeric value in the string or with its pointer.
+            pointer+=keyValue #The pointer increases to grab the next element of the message[pointer].
+    return ''.join(ciphertext)
+
+def decryptMessage(message,keyValue):
+    numOfColumns     =  int(math.ceil(float(len(message))/float(keyValue))) #Round the len(message)/keyValue=numOfColumns
+    numOfRows        = keyValue
+    numOfShadedBoxes = (numOfColumns*numOfRows)-len(message)
+    plaintext        = ['']*numOfColumns
+    col              = 0
+    row              = 0
+    for symbol in message:       #Analyze every letter of the message.
+        print(plaintext)         #Plaintext stores the first letters of each word separated by spaces, then each word grows until the complete message is gotten.
+        plaintext[col]+=symbol   #The value of each box in the encrypted message is collected in the plaintext variable.
+        col+=1                   #Go on to the next column.
+        if (col==numOfColumns) or (col==numOfColumns -1 and row >= numOfRows - numOfShadedBoxes):
+            col=0
+            row+=1
+            '''If the pointer of columns is equal to the total number of columns
+            or if the pointer reaches a shadedbox either by column and row, then
+            go on to the next row and start the pointer of column to 0.'''
+    return ''.join(plaintext)
+
+if __name__== '__main__':
+    main() 
