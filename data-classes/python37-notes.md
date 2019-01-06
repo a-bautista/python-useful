@@ -24,7 +24,7 @@ Based on the post from stackoverflow you need to execute the following commands 
 
 `sudo make altinstall`
 
-### Installing ##`pyenv`
+### Installing `pyenv`
 
 `curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash`
 
@@ -40,7 +40,9 @@ Suppose you want to work with a specific version of Python for a project. What y
 execute the main.py file with that particular version of python.
 
 `vi main.py`                # type in this file a hello world program
+
 `pyenv local 3.7.0`         # set the local python version to be 3.7.0
+
 `pyenv exec python main.py` # this will execute the python file with the 3.7.0 version
 
 ### Setting up a virtual environment with pyenv
@@ -49,6 +51,7 @@ You can create a virtual environment with a specific version of Python by first 
 version to create your virtual environment, that is,
 
 `pyenv local 3.7.0`             # set the local version to 3.7.0
+
 `pyenv exec python -m venv env` # create the virtual environment with Python 3.7.0
 
 With the commands from above you can have different virtual environments in various Python versions.
@@ -56,9 +59,8 @@ With the commands from above you can have different virtual environments in vari
 ### virtualenvwrapper
 
 `export PATH="/home/alexbr/.pyenv/bin:$PATH"`
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
+`eval "$(pyenv init -)"`
+`eval "$(pyenv virtualenv-init -)"`
 
 
 ### References:
