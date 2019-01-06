@@ -50,7 +50,9 @@ execute the main.py file with that particular version of python.
 You can create a virtual environment with a specific version of Python by first setting up the Python version you want and then using that
 version to create your virtual environment, that is,
 
-`pyenv local 3.7.0`             # set the local version to 3.7.0
+`mkdir appPython37` # create a new folder for the app that will work with Python 3.7
+
+`pyenv local 3.7.0` # set the local version to 3.7.0
 
 `pyenv exec python -m venv env` # create the virtual environment with Python 3.7.0
 
