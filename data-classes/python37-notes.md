@@ -3,25 +3,35 @@
 Based on the post from stackoverflow you need to execute the following commands to get up and running Python 3.7.0. (Linux Mint)
 
 `sudo apt-get update`
+
 `sudo apt-get upgrade`
+
 `sudo apt-get dist-upgrade`
+
 `sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus`
+
 `sudo apt-get install libncursesw5-dev libgdbm-dev libc6-dev`
+
 `sudo apt-get install zlib1g-dev libsqlite3-dev tk-dev`
+
 `sudo apt-get install libssl-dev openssl`
+
 `sudo apt-get install libffi-dev`
 
 `./configure`
+
 `make`
+
 `sudo make altinstall`
 
-### Installing `##pyenv`
+### Installing ##`pyenv`
 
 `curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash`
 
 ### Testing pyenv
 
 `pyenv install 3.7.0` # install a new version in Linux
+
 `pyenv versions`      # see the current versions
 
 ### Working with pyenv
@@ -45,13 +55,13 @@ With the commands from above you can have different virtual environments in vari
 
 ### virtualenvwrapper
 
-export PATH="/home/alexbr/.pyenv/bin:$PATH"
+`export PATH="/home/alexbr/.pyenv/bin:$PATH"`
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 
 
-References:
+### References:
 
 https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul 
 https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper
