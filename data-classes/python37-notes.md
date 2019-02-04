@@ -68,4 +68,5 @@ With the commands from above you can have different virtual environments in vari
 ### References:
 
 https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul 
+
 https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper
