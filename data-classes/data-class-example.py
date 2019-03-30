@@ -25,7 +25,7 @@ def main():
     print(f'{pos.name} is at {pos.lat} N, {pos.lon} E')
 
     '''What's the benefit of a data class? 
-    A data class is a regular Python class except for the fact that a data class has model methods like .__init__(),
+    A data class is a regular Python class except for the fact that a class has model methods like .__init__(),
     .__repr__(), .__eq__() whereas a data class does not require these mandatory methods.'''
 
 
