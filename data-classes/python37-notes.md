@@ -1,4 +1,7 @@
-## Installing Python 3.7 and using pyenv
+## Installing Python 3.7 and using pyenv (Linux)
+
+Suppose you want to work with a specific version of Python for a project. What you can do is to set a .python-version file and then
+execute the main.py file with that particular version of python.
 
 Based on the post from stackoverflow you need to execute the following commands to get up and running Python 3.7.0. (Linux Mint)
 
@@ -36,9 +39,6 @@ Based on the post from stackoverflow you need to execute the following commands 
 
 ### Working with pyenv
 
-Suppose you want to work with a specific version of Python for a project. What you can do is to set a .python-version file and then
-execute the main.py file with that particular version of python.
-
 `vi main.py`                # type in this file a hello world program
 
 `pyenv local 3.7.0`         # set the local python version to be 3.7.0
@@ -64,9 +64,21 @@ With the commands from above you can have different virtual environments in vari
 `eval "$(pyenv init -)"`
 `eval "$(pyenv virtualenv-init -)"`
 
+### Setting up a virtual environment in Windows
+
+`pip install virtualenv` # install virtualenv in Windows
+
+`virtualenv venv --python=C:\Python368\python.exe` # set up the virtual environment version 
+
+`./activate` # You need to access to the venv folder and then Scripts. In case you are not allowed to run scripts due to the execution of scripts that is disabled then run the following command as admin in Powershell.
+
+`set-executionpolicy remotesigned`
+
 
 ### References:
 
 https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul 
 
 https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper
+
+https://superuser.com/questions/106360/how-to-enable-execution-of-powershell-scripts
