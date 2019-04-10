@@ -2,6 +2,7 @@
 
 ### Table of contents
 
-|No| folder name               | Content description |
-|--|:--------------------------|:--------------------|
-|1 | cryptography              | Implementation of AES and 3DES.|
+| folder name               | Content description |
+|:--------------------------|:--------------------|
+| cryptography              | Implementation of AES and 3DES.|
+| flask_selenium            | Integration of flask with selenium automation tool.|
