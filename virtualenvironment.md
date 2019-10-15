@@ -3,6 +3,11 @@
 
 ## Which tools do I use for a virtual environment?
 
+Pipenv
+Virtualenv
+
+pip install pipenv
+pipenv install Pipfile
 
 ## How do I set up a virtual environment?
 
