@@ -8,7 +8,7 @@
 
 In Windows,you can create a virtual environment with the following: `virtualenv venv --python=<insert_your_python_version_here>` where `<insert_your_python_version_here>` was in my case `C:\Python\Python368\python.exe`
 
-In Linux, you can create a virtual environment with `virtualenv venv --python=python2.7`.
+In Linux, you can create a virtual environment with `virtualenv venv --python=/usr/bin/python3`.
 
 ## Additional notes
 
