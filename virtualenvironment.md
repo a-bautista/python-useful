@@ -1,4 +1,15 @@
-## Installing Python 3.7 and using pyenv (Linux)
+## What is a virtual environment? 
+
+
+## Which tools do I use for a virtual environment?
+
+
+## How do I set up a virtual environment?
+
+
+## Additional notes
+
+### Installing Python 3.7 and using pyenv (Linux)
 
 Suppose you want to work with a specific version of Python for a project. What you can do is to set a .python-version file and then
 execute the main.py file with that particular version of python.
