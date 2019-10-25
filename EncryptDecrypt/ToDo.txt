@@ -1,0 +1,7 @@
+
+
+Pending:
+
+1. Stores all the passwords in the output folder.
+
+Completed
