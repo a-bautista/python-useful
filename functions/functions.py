@@ -1,3 +1,4 @@
+from functools import partial
 def get_user_input():
     """
         No parameters in this function.
@@ -70,8 +71,19 @@ def make_checker(num):
 def multiply(a, b):
     return a * b
 
+# high order function for fixing something
+# you can achieve this with the partial from functools
 def multby(func, num):
     return lambda y: func(num, y)
+
+def add(x, y):
+    return x + y
+
+def multby2(func, num):
+    return lambda y: func(num, y)
+
+def add2(x, y):
+    return x + y
 
 def main():
     # print("Starting")
@@ -107,5 +119,13 @@ def main():
     # invoke the curried function
     print(double(5))
 
+    # fix a function with a number instead of creating the lambda function
+    p_add = partial(add, 2)
+    print(p_add(5))
+
+    # fix the number by 8
+    p_add2 = multby2(add2, 8)
+    print(p_add2(10))
+    print(p_add2(15))
 
 main()

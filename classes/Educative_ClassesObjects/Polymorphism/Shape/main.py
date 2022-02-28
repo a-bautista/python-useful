@@ -8,9 +8,11 @@ def main():
 
     print(str(shapes[0].getArea()))
     print(str(shapes[0].getPerimeter()))
+    print(shapes[0].__dict__)
     
     print(str(shapes[1].getArea()))
     print(str(shapes[1].getPerimeter()))
+    print(shapes[1].__dict__)
 
 if __name__ == '__main__':
     main()
